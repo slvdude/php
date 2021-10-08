@@ -77,8 +77,12 @@ li {
     border-radius: 100%;
 }
 
-.round-done {
+.done {
     border: 10px solid green;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 100%;
 }
 
 .todo_title {

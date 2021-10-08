@@ -32,7 +32,6 @@
             <?php if(!empty($todos)): ?>     
                 <ul>
                     <?php foreach($todos as $todoTitle => $todo): ?>
-                    <form action="functions.php" method="POST">
                         <li>
                             <div class='todo_container'>
                                 <div>
@@ -48,11 +47,10 @@
                                         </form> 
                                     </div>
                                 </div>
-                                <div class='round<?php echo $todo['done']? '-done': ''?>'></div>
+                                <div class='round<?php echo $todo['done']? 'done': ''?>'></div>
                             </div>
                         </li>
                         <hr>
-                    </form>
                     <?php endforeach; ?>
                 </ul>
             <?php else: echo '<p style="color: red;">No tasks yet</p>'?>
