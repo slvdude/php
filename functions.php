@@ -20,7 +20,6 @@
         foreach($arr as $todo) {
             $todo['done'] = true;
         }
-        print_r($arr);
         setcookie('todos', json_encode($arr));
     }
 
