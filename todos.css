@@ -118,3 +118,8 @@ li {
     border-radius: 6px;
     cursor: pointer; 
 }
+
+.container .handle_all {
+    display: flex;
+    flex-direction: row;
+}

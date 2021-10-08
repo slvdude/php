@@ -20,10 +20,14 @@
             <input type="text" placeholder="Enter a task" name="title" class="input_task">
             <button type="submit" class="add_task" name="submit">Add task</button>
         </form>
-        <form action="functions.php" method="POST">
-            <button class="handle_task" type="submit" name="deleteAll">Remove all</button>
-            <button class="handle_task" type="submit" name="doneAll">Ready all</button>   
-        </form>
+        <div class="handle_all">
+            <form action="functions.php" method="POST">
+                <button class="handle_task" type="submit" name="deleteAll">Remove all</button>   
+            </form>
+            <form action="functions.php" method="POST">
+                <button class="handle_task" type="submit" name="doneAll">Ready all</button>
+            </form> 
+        </div>
         <hr>
             <?php if(!empty($todos)): ?>     
                 <ul>

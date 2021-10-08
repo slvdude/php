@@ -19,8 +19,8 @@
     function doneAllTodos($arr) {
         foreach($arr as $todo) {
             $todo['done'] = true;
-        }
         setcookie('todos', json_encode($todos));
+        }
     }
 
     if(isset($_POST['submit'])) {
