@@ -34,7 +34,10 @@
                                 <div>
                                     <p class='todo_title'><?php echo $todo['text'] ?></p>
                                     <div class="btn_container">
-                                        <input class='done_todo' type="checkbox"<?php $todo['done']? 'checked': ''?> name="doneTodo"></input>
+                                        <form action="doneTodo.php" method="POST">
+                                            <input class='done_todo' type="hidden" name="done_todo" value="<?php $todoTitle?>"></input>
+                                            <button class='done_todo' type="submit">Ready</button>
+                                        </form>
                                         <form action="deleteTodo.php" method="POST">
                                             <input type="hidden" name="todo_title" value="<?php echo $todoTitle?>">
                                             <button class='delete_todo' type="submit">Delete</button>
