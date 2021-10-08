@@ -1,6 +1,7 @@
 <?php
     //require('functions.php');
     $todos = json_decode($_COOKIE['todos'], true) ?? [];
+    print_r($todos);
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +48,7 @@
                                         </form> 
                                     </div>
                                 </div>
-                                <div class='round<?php echo $todo['done']? 'done': ''?>'></div>
+                                <div class='round<?php echo $todo['done']? ' done': ''?>'></div>
                             </div>
                         </li>
                         <hr>

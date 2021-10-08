@@ -1,22 +1,27 @@
 <?php
     $todos = json_decode($_COOKIE['todos'], true) ?? [];
+    
 
     function doneAllTodos($arr) {
-        foreach($arr as $todo) {
-            $todo['done'] = true;
+        foreach($arr as $key1 => $todo) {
+            foreach($todo as $key2 => $el) {
+                if($key2 == 'done') {
+                    $arr[$key1][$key2] = true;
+                }
+            }  
         }
         setcookie('todos', json_encode($arr));
         header('Location: index.php');
     }
 
-    function doneSingularTodo($arr) {
+    function doneSingularTodo() {
         $todoTitle = $_POST['done_todo'];
-        if($arr[$todoTitle]['done'] == false) {
-            $arr[$todoTitle]['done'] = true;
+        if($todos[$todoTitle]['done'] == false) {
+            $todos[$todoTitle]['done'] = true;
         } else {
-            $arr[$todoTitle]['done'] = false;  
+            $todos[$todoTitle]['done'] = false;  
         }
-        setcookie('todos', json_encode($arr));
+        setcookie('todos', json_encode($todos));
         header('Location: index.php');
     }
 
@@ -25,7 +30,7 @@
     }  
 
     if(isset($_POST['done_todo'])) {
-        doneSingularTodo($todos);
+        doneSingularTodo();
     }
     
 ?>
