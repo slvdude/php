@@ -35,7 +35,7 @@
                         <li>
                             <div class='todo_container'>
                                 <div>
-                                    <p class='todo_title'><?php echo $key+1?> )<?php echo $todo['text'] ?></p>
+                                    <p class='todo_title'><?php echo $todo['text'] ?></p>
                                     <div class="btn_container">
                                         <form action="doneTodo.php" method="POST">
                                             <input class='done_todo' type="hidden" name="done_todo" value="<?php echo $key?>"></input>
@@ -53,7 +53,7 @@
                         <hr>
                     <?php endforeach; ?>
                 </ul>
-            <?php else: echo '<p style="color: red;">No tasks yet</p>'?>
+            <?php else: echo '<p style="color: red; font-size: 20px;">No tasks yet</p>'?>
             <?php endif; ?>
     </div>
 </body>
