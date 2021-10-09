@@ -1,5 +1,4 @@
 <?php
-    //require('functions.php');
     $todos = json_decode($_COOKIE['todos'], true) ?? [];
     print_r($todos);
 ?>
@@ -32,18 +31,18 @@
         <hr>
             <?php if(!empty($todos)): ?>     
                 <ul>
-                    <?php foreach($todos as $todoTitle => $todo): ?>
+                    <?php foreach($todos as $key => $todo): ?>
                         <li>
                             <div class='todo_container'>
                                 <div>
-                                    <p class='todo_title'><?php echo $todo['text'] ?></p>
+                                    <p class='todo_title'><?php echo $key+1?> )<?php echo $todo['text'] ?></p>
                                     <div class="btn_container">
                                         <form action="doneTodo.php" method="POST">
-                                            <input class='done_todo' type="hidden" name="done_todo" value="<?php $todoTitle?>"></input>
+                                            <input class='done_todo' type="hidden" name="done_todo" value="<?php echo $key?>"></input>
                                             <button class='done_todo' type="submit">Ready</button>
                                         </form>
                                         <form action="deleteTodo.php" method="POST">
-                                            <input type="hidden" name="todo_title" value="<?php echo $todoTitle?>">
+                                            <input type="hidden" name="todo_title" value="<?php echo $key?>">
                                             <button class='delete_todo' type="submit">Delete</button>
                                         </form> 
                                     </div>

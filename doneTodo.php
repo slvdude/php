@@ -13,13 +13,14 @@
         $todoTitle = $_POST['done_todo'];
         foreach($arr as $key => $todo) {
             if($key == $todoTitle) {
-                    if($arr[$key]['done'] == false) {
-                        $arr[$key]['done'] = true;
-                    } else {
-                        $arr[$key]['done'] = false;
-                    }
+                if($arr[$key]['done'] == false) {
+                    $arr[$key]['done'] = true;
+                } 
+                else {
+                    $arr[$key]['done'] = false;
                 }
             }
+        }
         setcookie('todos', json_encode($arr));
         header('Location: index.php');
     }
@@ -31,5 +32,4 @@
     if(isset($_POST['done_todo'])) {
         doneSingularTodo($todos);
     }
-    
 ?>
